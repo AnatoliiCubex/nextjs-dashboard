@@ -1,4 +1,4 @@
-import "~/app/ui/global.css";
+import "~/app/ui/styles/global.css";
 
 import { PropsWithChildren } from "react";
 
