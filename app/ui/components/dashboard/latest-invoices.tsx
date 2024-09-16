@@ -16,31 +16,31 @@ export default async function LatestInvoices({
       <div className='flex flex-col justify-between bg-gray-50 p-4 rounded-xl grow'>
         {/* NOTE: Uncomment this code in Chapter 7 */}
 
-        {/* <div className="bg-white px-6">
+        <div className='bg-white px-6'>
           {latestInvoices.map((invoice, i) => {
             return (
               <div
                 key={invoice.id}
                 className={clsx(
-                  'flex flex-row justify-between items-center py-4',
+                  "flex flex-row justify-between items-center py-4",
                   {
-                    'border-t': i !== 0,
-                  },
+                    "border-t": i !== 0,
+                  }
                 )}
               >
-                <div className="flex items-center">
+                <div className='flex items-center'>
                   <Image
                     src={invoice.image_url}
                     alt={`${invoice.name}'s profile picture`}
-                    className="mr-4 rounded-full"
+                    className='mr-4 rounded-full'
                     width={32}
                     height={32}
                   />
-                  <div className="min-w-0">
-                    <p className="font-semibold text-sm md:text-base truncate">
+                  <div className='min-w-0'>
+                    <p className='font-semibold text-sm md:text-base truncate'>
                       {invoice.name}
                     </p>
-                    <p className="sm:block hidden text-gray-500 text-sm">
+                    <p className='sm:block hidden text-gray-500 text-sm'>
                       {invoice.email}
                     </p>
                   </div>
@@ -53,7 +53,7 @@ export default async function LatestInvoices({
               </div>
             );
           })}
-        </div> */}
+        </div>
         <div className='flex items-center pt-6 pb-2'>
           <ArrowPathIcon className='w-5 h-5 text-gray-500' />
           <h3 className='ml-2 text-gray-500 text-sm'>Updated just now</h3>
