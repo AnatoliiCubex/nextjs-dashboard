@@ -37,6 +37,28 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
+@media (max-width: 767px) {
+  @keyframes move-out {
+    from {
+      transform: translateX(0%);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes move-in {
+    from {
+      transform: translateX(100%);
+    }
+
+    to {
+      transform: translateX(0%);
+    }
+  }
+}
+
 ::view-transition-old(root) {
   animation: 0.8s ease both move-out !important;
 }
