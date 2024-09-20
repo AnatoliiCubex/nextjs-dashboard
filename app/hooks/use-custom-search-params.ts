@@ -10,7 +10,9 @@ export const useCustomSearchParams = (wait?: number) => {
     (param: string, value: string) => {
       const params = new URLSearchParams(searchParams);
 
-      value ? params.set("query", value) : params.delete("query");
+      if (param === "query") params.set("page", "1");
+
+      value ? params.set(param, value) : params.delete(param);
       replace(`${pathname}?${params.toString()}`);
     },
     wait ?? 300
