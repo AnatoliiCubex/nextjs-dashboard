@@ -1,11 +1,14 @@
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import NavLinks from "~/app/ui/components/dashboard/nav-links";
 import AcmeLogo from "~/app/ui/components/acme-logo";
 import { PowerIcon } from "@heroicons/react/24/outline";
 
 export default function SideNav() {
   return (
-    <div className='flex-none w-full md:w-64'>
+    <div
+      style={{ viewTransitionName: "disabled" }}
+      className='flex-none w-full md:w-64'
+    >
       <div className='flex flex-col px-3 md:px-2 py-4 h-full'>
         <Link
           className='flex justify-start items-end bg-blue-600 mb-2 p-4 rounded-md h-20 md:h-40'
