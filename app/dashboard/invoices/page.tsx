@@ -7,12 +7,12 @@ import { lusitana } from "~/app/ui/fonts/fonts";
 import { fetchInvoicesPages } from "~/app/lib/data";
 import Pagination from "~/app/ui/components/invoices/pagination";
 
-interface Props {
+type Props = {
   searchParams?: {
     query?: string;
     page?: string;
   };
-}
+};
 
 export default async function Page({ searchParams }: Props) {
   const query = searchParams?.query || "";

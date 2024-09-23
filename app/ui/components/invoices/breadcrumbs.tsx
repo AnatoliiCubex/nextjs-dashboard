@@ -2,11 +2,11 @@ import { clsx } from "clsx";
 import Link from "next/link";
 import { lusitana } from "~/app/ui/fonts/fonts";
 
-interface Breadcrumb {
+type Breadcrumb = {
   label: string;
   href: string;
   active?: boolean;
-}
+};
 
 export default function Breadcrumbs({
   breadcrumbs,
