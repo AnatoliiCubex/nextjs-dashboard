@@ -1,9 +1,7 @@
 "use client";
 
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { usePathname, useSearchParams, useRouter } from "next/navigation";
 
-import { ChangeEvent } from "react";
 import { useCustomSearchParams } from "~/app/hooks/use-custom-search-params";
 
 export default function Search({ placeholder }: { placeholder: string }) {

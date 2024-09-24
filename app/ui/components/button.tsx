@@ -1,15 +1,16 @@
 import clsx from "clsx";
 import { PropsWithChildren } from "react";
 
-interface ButtonProps
-  extends PropsWithChildren<React.ButtonHTMLAttributes<HTMLButtonElement>> {}
+type ButtonProps = PropsWithChildren<
+  React.ButtonHTMLAttributes<HTMLButtonElement>
+>;
 
 export function Button({ children, className, ...rest }: ButtonProps) {
   return (
     <button
       {...rest}
       className={clsx(
-        "flex h-10 items-center rounded-lg bg-blue-500 px-4 text-sm font-medium text-white transition-colors hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-blue-600 aria-disabled:cursor-not-allowed aria-disabled:opacity-50",
+        "flex items-center bg-blue-500 hover:bg-blue-400 active:bg-blue-600 aria-disabled:opacity-50 px-4 rounded-lg h-10 font-medium text-sm text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 aria-disabled:cursor-not-allowed",
         className
       )}
     >
