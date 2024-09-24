@@ -21,15 +21,18 @@ export default async function Page() {
         Dashboard
       </h1>
       <div className='gap-6 grid sm:grid-cols-2 lg:grid-cols-4'>
-        <Suspense fallback={<CardsSkeleton />}>
+        <Suspense key={"card-skeleton"} fallback={<CardsSkeleton />}>
           <CardWrapper />
         </Suspense>
       </div>
       <div className='gap-6 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 mt-6'>
-        <Suspense fallback={<RevenueChartSkeleton />}>
+        <Suspense key={"revenue-skeleton"} fallback={<RevenueChartSkeleton />}>
           <RevenueChart />
         </Suspense>
-        <Suspense fallback={<LatestInvoicesSkeleton />}>
+        <Suspense
+          key={"invoices-skeleton"}
+          fallback={<LatestInvoicesSkeleton />}
+        >
           <LatestInvoices />
         </Suspense>
       </div>
