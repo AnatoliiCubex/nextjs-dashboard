@@ -1,11 +1,24 @@
+"use client";
+
 import { lusitana } from "~/app/ui/fonts/fonts";
-import { AtSymbolIcon, KeyIcon } from "@heroicons/react/24/outline";
+import {
+  AtSymbolIcon,
+  ExclamationCircleIcon,
+  KeyIcon,
+} from "@heroicons/react/24/outline";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { Button } from "./button";
+import { useActionState } from "react";
+import { authenticate } from "~/app/lib/actions";
 
 export default function LoginForm() {
+  const [errorMessage, formAction, isPending] = useActionState(
+    authenticate,
+    undefined
+  );
+
   return (
-    <form className='space-y-3'>
+    <form action={formAction} className='space-y-3'>
       <div className='flex-1 bg-gray-50 px-6 pt-8 pb-4 rounded-lg'>
         <h1 className={`${lusitana.className} mb-3 text-2xl`}>
           Please log in to continue.
@@ -51,11 +64,20 @@ export default function LoginForm() {
             </div>
           </div>
         </div>
-        <Button className='mt-4 w-full'>
+        <Button className='mt-4 w-full' aria-disabled={isPending}>
           Log in <ArrowRightIcon className='ml-auto w-5 h-5 text-gray-50' />
         </Button>
-        <div className='flex items-end space-x-1 h-8'>
-          {/* Add form errors here */}
+        <div
+          className='flex items-end space-x-1 h-8'
+          aria-live='polite'
+          aria-atomic='true'
+        >
+          {errorMessage && (
+            <>
+              <ExclamationCircleIcon className='w-5 h-5 text-red-500' />
+              <p className='text-red-500 text-sm'>{errorMessage}</p>
+            </>
+          )}
         </div>
       </div>
     </form>
