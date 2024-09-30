@@ -6,6 +6,11 @@ import { InvoicesTableSkeleton } from "~/app/ui/components/skeletons";
 import { lusitana } from "~/app/ui/fonts/fonts";
 import { fetchInvoicesPages } from "~/app/lib/data";
 import Pagination from "~/app/ui/components/invoices/pagination";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Invoices",
+};
 
 type Props = {
   searchParams?: {
